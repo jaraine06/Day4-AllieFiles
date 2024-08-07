@@ -84,7 +84,7 @@ TASK 2: ENABLE IOX / DOCKER INSIDE YOUR CSR1000v
 		
 		CSR1000v: 
 			
-			"sh ip int br" 
+			sh ip int br 
 		
 		Result: 
 		
@@ -116,7 +116,8 @@ TASK 2: ENABLE IOX / DOCKER INSIDE YOUR CSR1000v
 
 	OTHER: ON BASH:
 	
-			"sudo su"
+			sudo su
+			ip addr sho
 		
 	
 	
@@ -126,7 +127,7 @@ TASK 2: ENABLE IOX / DOCKER INSIDE YOUR CSR1000v
 		
 		CSR1000v: 
 		
-			"sh ver" or "sh version" 
+			sh ver or sh version
 		
 		Result:
 		
@@ -160,7 +161,7 @@ TASK 2: ENABLE IOX / DOCKER INSIDE YOUR CSR1000v
 		
 		CSR1000v:
 		
-		  "sh ip protocols"
+		  sh ip protocols
 		  
 		Result: 
 		
@@ -205,8 +206,8 @@ TASK 2: ENABLE IOX / DOCKER INSIDE YOUR CSR1000v
 		
 		CSR1000v: 
 		
-			"config t"
-			"hostname yourname" 
+			config t
+			hostname yourname 
 		
 		Result:
 		
@@ -241,10 +242,10 @@ TASK 3: CREATE LOOPBACKS
 		
 		CSR1000v:
 		
-			"conf t" 
-			"int lo 1" 
-			"ip add 1.1.1.1 255.255.255.0" 
-			"do sh ip int br"
+			conf t 
+			int lo 1 
+			ip add 1.1.1.1 255.255.255.0
+			do sh ip int br
 		
 		Result: 
 		
@@ -271,17 +272,6 @@ TASK 3: CREATE LOOPBACKS
 		Line 2 SUCCESS: int loopback 2
 		Line 3 SUCCESS: ip add 2.2.2.2 255.255.255.0 
 		
-15. Before proceeding to RESTAPI do this: 
-		
-		BASH: 
-		 
-		COMMANDS: 
-		
-			"sudo su" (for root) 
-			"yun install nmap"
-			"nmap -v 8.8.8.8"
-		
-		
 		
 TASK 4:  Enabling RESTAPI in CSR1000v 
 
@@ -289,12 +279,12 @@ TASK 4:  Enabling RESTAPI in CSR1000v
 
 		COMMANDS: 
 		
-		 "conf t"
-		 "username admin privilege 15 secret pass"
-		 "ip http secure-server"
-		 "ip http authentication local"
-		 "restconf"
-		 "end"
+		conf t
+		username admin privilege 15 secret pass
+		 ip http secure-server
+		 ip http authentication local
+		 restconf
+		 end
 		 
 17. Open your post man application, if it is asking for free account log in, log in using your google 
     account. 
@@ -336,10 +326,10 @@ TASK 4:  Enabling RESTAPI in CSR1000v
 				"enabled": true,
 				"ietf-ip:ipv4": {
 					"address": [
-                {
-                    "ip": "3.3.3.3",
-                    "netmask": "255.255.255.0"
-                }
+               			 {
+                   			 "ip": "3.3.3.3",
+                   			 "netmask": "255.255.255.0"
+               			 }
             ]
         }
     }
@@ -353,7 +343,7 @@ TASK 4:  Enabling RESTAPI in CSR1000v
 	
 		COMMANDS: 
 		
-			"sh ip int br" 
+			sh ip int br
 			
 		Result: 
 		
@@ -372,9 +362,9 @@ TASK 4:  Enabling RESTAPI in CSR1000v
 		
 		CSR1000v: 
 		
-			"conf t"
-			"int lo 4" 
-			"ip add 4.4.4.4 255.255.255.0" 
+			conf t
+			int lo 4 
+			ip add 4.4.4.4 255.255.255.0
 			
 		*commands continues the same depending on number of loopbacks you will be ceating*
 		
@@ -407,21 +397,20 @@ TASK 4:  Enabling RESTAPI in CSR1000v
 						"enabled": true,
 						"ietf-ip:ipv4": {
 							"address": [
-						{
-							"ip": "6.6.6.6",
-							"netmask": "255.255.255.0"
+							{
+								"ip": "6.6.6.6",
+								"netmask": "255.255.255.0"
 							}
 						]
 					}
 				},
-						{
-						"ietf-interfaces:interface": {
-							"name": "Loopback7",
-							"description": "Configured by RESTCONF",
-							"type": "iana-if-type:softwareLoopback",
-							"enabled": true,
-							"ietf-ip:ipv4": {
-								"address": [
+					"ietf-interfaces:interface": {
+						"name": "Loopback7",
+						"description": "Configured by RESTCONF",
+						"type": "iana-if-type:softwareLoopback",
+						"enabled": true,
+						"ietf-ip:ipv4": {
+							"address": [
 							{
 								"ip": "7.7.7.7",
 								"netmask": "255.255.255.0"
@@ -438,10 +427,10 @@ Task 5: Deleting loopback and addresses.
 		
 		CSR1000v: 
 		
-			"conf t"
-			"int lo 1"
-			"no ip add 1.1.1.1 255.255.255.0"
-			"sh ip int br" 
+			conf t
+			int lo 1
+			no ip add 1.1.1.1 255.255.255.0
+			sh ip int br
 		
 		Result: 
 		
@@ -477,7 +466,7 @@ Task 5: Deleting loopback and addresses.
 		Result: 
 		
 		Loopback6              unassigned      YES TFTP   up                    up      
-        Loopback7              unassigned      YES TFTP   up                    up
+                Loopback7              unassigned      YES TFTP   up                    up
 		
 		
 	    POSTMAN: 
@@ -505,7 +494,7 @@ Task 5: Deleting loopback and addresses.
 		
 		COMMANDS: 
 		  
-		  "sh ip int br" 
+		  sh ip int br
 		
 		
 		
