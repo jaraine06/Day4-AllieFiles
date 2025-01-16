@@ -61,6 +61,7 @@ event manager applet CreateLoopbacks
  action 4.0 cli command "end"
  end
 
+@@@Enter or Run this command
 event manager run CreateLoopbacks
 
 removing loopbacks:
