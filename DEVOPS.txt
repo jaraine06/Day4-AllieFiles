@@ -43,6 +43,8 @@ TASK 1: SET IP ADDRESS ON YOUR VIRTUAL MACHINE.
 
 TASK 2: ENABLE IOX / DOCKER INSIDE YOUR CSR1000v
 
+@@@@OPEN FWVPNPH
+
 			COMMAND: 
 
 			config t
@@ -71,6 +73,11 @@ TASK 2: ENABLE IOX / DOCKER INSIDE YOUR CSR1000v
 			   cpu 1500 
 			   memory 512
 			end
+
+
+@@@@ ONE OF QUESTIONS IN CCNA EXAM
+what is the extension of terra form
+.hcl {hashicorp configuration language}
 
 7. Wait for the guestshell to install successfully. 
 
